@@ -33,3 +33,50 @@ x = 'hello'
 x.to_i # 0
 
 10 % 3 # 1, because is the rest on the division
+
+=begin
+Methods you can use:
+
+object.odd?
+
+22.odd?
+
+object.even?
+
+22.even?
+
+Comparisons:
+
+a == b
+
+1 == 2
+
+3 == 3
+
+5 < 2
+
+2 <= 5
+
+5 > 2
+
+5 && 6
+
+5 || 6
+
+Generate a random number between 0 and less than 10:
+
+rand(10)
+
+To convert an string object to integer:
+
+objectname.to_i
+
+"5".to_i
+
+To convert an object to string:
+
+objectname.to_s
+
+5.to_s
+
+=end
