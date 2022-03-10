@@ -1,0 +1,2 @@
+# Auto ident and rubocop
+Shift + Option + f
