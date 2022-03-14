@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'crud' # on same directory
 
 # On diff directory
