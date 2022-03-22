@@ -7,9 +7,12 @@ class ArticlesController < ApplicationController
 
   def show; end
 
-  def new; end
+  def new
+    @article = Article.new
+  end
 
   def create
+    # debugger
     # render plain: params[:article]
     @article = Article.new(article_params)
     # render plain: @article.inspect
