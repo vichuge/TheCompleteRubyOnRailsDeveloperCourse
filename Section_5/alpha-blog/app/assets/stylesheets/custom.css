@@ -3,7 +3,7 @@
 }
 
 .nav-link {
-  color: white !important
+  color: white !important;
 }
 
 #logo {
@@ -15,8 +15,8 @@
   font-weight: bold;
 }
 
-#jumbotron{
-  background-image: url('assets/alpha.jpg');
+#jumbotron {
+  background-image: url("assets/alpha.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,11 +26,11 @@
 html,
 body {
   height: 100%;
+  background-color: lightgray;
 }
 
 #page-content {
   flex: 1 0 auto;
-  background-color: lightgray;
 }
 
 #sticky-footer {
@@ -52,5 +52,5 @@ body {
 }
 
 .form-class {
-  background-color: #33ABB5;
+  background-color: #33abb5;
 }

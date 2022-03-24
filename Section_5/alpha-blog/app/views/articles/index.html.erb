@@ -1,4 +1,7 @@
 <h1 class="text-center mt-4">Listing all articles</h1>
+<p class="text-center">
+  <%= link_to 'Create new article', new_article_path, class: "btn btn-primary"%>
+</p>
 <% @articles.each do |article| %>
   <div class="card text-center mb-4 mx-5">
     <div class="card-header">
@@ -17,6 +20,3 @@
     </div>
   </div>
 <% end %>
-<p class="text-center">
-  <%= link_to 'Create new article', new_article_path, class: "btn btn-primary"%>
-</p>
