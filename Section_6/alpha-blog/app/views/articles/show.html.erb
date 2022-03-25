@@ -1,7 +1,7 @@
 <h1>Show articles details</h1>
 <div class="card text-center mb-4 mx-5">
   <div class="card-header">
-    Featured
+    Author: <%= @article.user.username %>
   </div>
   <div class="card-body">
     <h5><%= link_to @article.title, article_path(@article), class: "card-title" %></h5>
