@@ -1,0 +1,18 @@
+<h1>Show articles details</h1>
+<div class="card text-center mb-4 mx-5">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5><%= link_to @article.title, article_path(@article), class: "card-title" %></h5>
+    <p class="card-text"><%= @article.description %></p>
+    <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-info" %>
+    <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?', "turbo-method": :delete }, class: "btn btn-outline-danger" %>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+<p class="text-center">
+<%= link_to 'Return to articles listing', articles_path, class: "btn btn-primary"%>
+</p>
