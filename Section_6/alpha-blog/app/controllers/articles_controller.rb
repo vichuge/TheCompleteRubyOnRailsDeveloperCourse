@@ -12,16 +12,16 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    # debugger
     # render plain: params[:article]
     @article = Article.new(article_params)
+    @article.user_id = User.first.id
     # render plain: @article.inspect
     # article.errors.full_messages
     if @article.save
-      flash[:notice] = 'Article was successfully created'
+      flash[:success] = 'Article was successfully created'
       redirect_to @article
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
@@ -29,16 +29,16 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:notice] = 'Article was successfully updated'
+      flash[:info] = 'Article was successfully updated'
       redirect_to @article
     else
-      render 'edit'
+      render 'edit', status: :unprocessable_entity
     end
   end
 
   def destroy
     @article.destroy
-    # flash[:notice] = "Article was successfully deleted"
+    flash[:danger] = 'Article was successfully deleted'
     redirect_to articles_path
   end
 
