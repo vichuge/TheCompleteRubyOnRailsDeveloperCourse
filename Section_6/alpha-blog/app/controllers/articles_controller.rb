@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:article]
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
     # render plain: @article.inspect
     # article.errors.full_messages
     if @article.save
@@ -42,7 +42,9 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-  def welcome; end
+  def welcome
+    redirect_to articles_path if logged_in?
+  end
 
   private
 
