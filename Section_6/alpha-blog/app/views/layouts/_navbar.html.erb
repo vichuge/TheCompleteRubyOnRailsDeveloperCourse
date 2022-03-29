@@ -54,8 +54,9 @@
               <%= current_user.username%>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><%= link_to 'Edit profile', edit_user_path(current_user), class: 'dropdown-item'%></li>
+              <li><%= link_to 'Edit profile', edit_user_path(current_user), class: 'dropdown-item'%></li>
               <li><%= link_to 'See profile', user_path(current_user), class: 'dropdown-item'%></li>
+              <li><%= link_to 'Delete profile', user_path(current_user), data: { turbo_confirm: 'Are you sure?', "turbo-method": :delete }, class: "dropdown-item text-danger" %></li>
             </ul>
           </li>
         <% end %>

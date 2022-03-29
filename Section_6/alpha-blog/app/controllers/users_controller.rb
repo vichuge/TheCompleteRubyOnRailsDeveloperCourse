@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update destroy show]
+  before_action :require_user, only: %i[edit update destroy]
+  before_action :require_same_user, only: %i[edit update destroy]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 1)
@@ -36,9 +38,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    flash[:danger] = 'User and all articles created by user have been deleted'
-    redirect_to users_path
+    if @user.destroy
+      flash[:danger] = 'User and all articles created by user have been deleted'
+    else
+      flash[:info] = 'There was an error deleting the user'
+    end
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   private
@@ -49,5 +55,12 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def require_same_user
+    if current_user != @user
+      flash[:danger] = 'You can only edit or delete your own account'
+      redirect_to @user
+    end
   end
 end
