@@ -11,7 +11,7 @@
       <h5><%= link_to article.title, article_path(article), class: "card-title" %></h5>
       <p class="card-text"><%= article.description %></p>
       <%= link_to 'View', article_path(article), class: "btn btn-outline-success" %>
-      <% if logged_in? && article.user == current_user %>
+      <% if logged_in? && (article.user == current_user || current_user.admin?) %>
         <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-info" %>
         <%= link_to 'Delete', article_path(article), method: :delete, data: { turbo_confirm: 'Are you sure?', "turbo-method": :delete }, class: "btn btn-outline-danger" %>
       <% end %>
