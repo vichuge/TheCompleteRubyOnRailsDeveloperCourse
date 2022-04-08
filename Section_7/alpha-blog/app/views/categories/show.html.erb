@@ -1,0 +1,12 @@
+<h1 class="text-center my-4">Category:</h1>
+<div class="card text-center mb-4 mx-5">
+  <div class="card-body">
+    <h5 class="card-title"><%= @category.name %></h5>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+<p class="text-center">
+  <%= link_to 'Return to articles listing', articles_path, class: "btn btn-primary"%>
+</p>
