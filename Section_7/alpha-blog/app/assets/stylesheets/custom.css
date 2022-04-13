@@ -101,3 +101,11 @@ body {
 .flickr_pagination .next_page {
   margin-left: 1em;
 }
+
+.rounded-pill {
+  text-decoration: none;
+}
+
+.rounded-pill:hover {
+  color: lightgray;
+}
