@@ -5,6 +5,7 @@
   <div class="card text-center my-4 mx-5">
     <div class="card-body">
       <h5><%= link_to category.name, category_path(category), class: "card-title" %></h5>
+      <p class="card-text"><%= pluralize(category.articles.count, "article") %></p>
       <%= link_to 'View', category_path(category), class: "btn btn-outline-success" %>
       <% if logged_in? && current_user.admin? %>
         <%= link_to 'Edit', edit_category_path(category), class: "btn btn-outline-info" %>
